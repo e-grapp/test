@@ -1,0 +1,17 @@
+version: 2.1
+    
+jobs:
+  my-job:
+    docker:
+    - image: cimg/python:3.10
+    resource_class: small
+    
+    steps:
+      - checkout:          
+      - run: |
+          circleci version
+
+workflows:
+  le-workfw5:
+    jobs:
+      - my-job
