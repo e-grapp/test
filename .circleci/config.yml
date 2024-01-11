@@ -23,9 +23,7 @@ jobs:
       - run: 
           name: poll
           command: |
-            watch -n 60 curl --request GET \
-            --url https://circleci.com/api/v2/me \
-            --header 'Circle-Token: $CIRCLE_TOKEN'
+            watch -n 1 "curl --request GET --url https://circleci.com/api/v2/me --header 'Circle-Token: $CIRCLE_TOKEN'"
 
 workflows:
   le-workfw5:
