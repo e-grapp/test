@@ -9,6 +9,11 @@ jobs:
     steps:
       - checkout
       - run:
+          name: install net tools
+          command: |
+            apt-get update -y
+            apt-get install -y iputils-ping
+      - run:
           name: Cancel build after set time
           background: true
           command: |
