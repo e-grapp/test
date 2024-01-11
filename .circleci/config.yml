@@ -7,7 +7,7 @@ jobs:
     resource_class: small
     
     steps:
-      - checkout:          
+      - checkout        
       - run: |
           circleci version
 
