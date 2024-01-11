@@ -8,11 +8,11 @@ jobs:
     
     steps:
       - checkout
-      - run:
-          name: install net tools
-          command: |
-            sudo apt-get update -y
-            sudo apt-get install -y iputils-ping
+#      - run:
+#          name: install net tools
+#          command: |
+#            sudo apt-get update -y
+#            sudo apt-get install -y iputils-ping
       - run:
           name: Cancel build after set time
           background: true
@@ -23,7 +23,7 @@ jobs:
       - run: 
           name: poll
           command: |
-            curl --request GET \
+            watch -n 60 curl --request GET \
             --url https://circleci.com/api/v2/me \
             --header 'Circle-Token: $CIRCLE_TOKEN'
 
