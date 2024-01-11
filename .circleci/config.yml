@@ -21,9 +21,9 @@ jobs:
             echo "Canceling workflow as too much time has elapsed"
             curl -X POST --header "Content-Type: application/json" "https://circleci.com/api/v2/workflow/${CIRCLE_WORKFLOW_ID}/cancel?circle-token=${CIRCLE_TOKEN}" 
       - run: 
-          name: poll
+          name: poll IP test
           command: |
-            watch -n 1 "curl --request GET --url https://circleci.com/api/v2/me --header 'Circle-Token: $CIRCLE_TOKEN'"
+            watch -n 1 "curl icanhazip.com"
 
 workflows:
   le-workfw5:
